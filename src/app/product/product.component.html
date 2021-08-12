@@ -1,0 +1,29 @@
+
+<a href="/product-add" >Thêm sản phẩm</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tên</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+     
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td><img src="{{product.image}}" width="400px" alt=""></td>
+      <td>{{product.desc}}</td>
+      <td><a href="product/{{product.id}}">Xem chi tiêt</a>
+        <button (click)="onRemoveItem(product.id)">Xóa</button>
+        <a href="/product/{{product.id}}/edit">Sửa</a>
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
